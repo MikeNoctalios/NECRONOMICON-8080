@@ -875,7 +875,7 @@
 
         <div class="calc-toolbar-row">
           <button id="btn-add-row" class="rune-action-btn gold" type="button">＋ Строка</button>
-          <button id="btn-load-preset" class="rune-action-btn" type="button">📜 Из тетради</button>
+          <button id="btn-load-preset" class="rune-action-btn" type="button">📜 Пример</button>
           <button id="btn-clear-rows" class="rune-action-btn" type="button">🗑 Очистить</button>
           <button id="btn-run-sim" class="rune-action-btn gold" type="button">⚙ Прогон</button>
         </div>
