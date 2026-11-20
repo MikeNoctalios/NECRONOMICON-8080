@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#280609" />
+  <title>Некрономикон Программиста — КР580ВМ80А</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="tome-viewport">
+    <!-- ТЯЖЁЛАЯ ОБЛОЖКА ГРИМУАРА (открывается при старте или по кнопке) -->
+    <div id="cover-screen" class="cover-screen" aria-hidden="false">
+      <div class="cover-leather pcb-motif">
+        <div class="brass-corner tl"></div>
+        <div class="brass-corner tr"></div>
+        <div class="brass-corner bl"></div>
+        <div class="brass-corner br"></div>
+        <div class="spine-ribs"></div>
+
+        <div class="cover-medallion">
+          <svg class="pcb-eye-svg" viewBox="0 0 160 160" aria-hidden="true">
+            <circle cx="80" cy="80" r="72" fill="none" stroke="#d4af37" stroke-width="2" stroke-dasharray="6 4"/>
+            <circle cx="80" cy="80" r="56" fill="#1e0407" stroke="#b8860b" stroke-width="1.5"/>
+            <path d="M80 14 L80 34 M80 126 L80 146 M14 80 L34 80 M126 80 L146 80" stroke="#d4af37" stroke-width="2"/>
+            <path d="M33 33 L48 48 M112 112 L127 127 M127 33 L112 48 M48 112 L33 127" stroke="#b8860b" stroke-width="1.5"/>
+            <rect x="58" y="58" width="44" height="44" rx="4" fill="#3a0a10" stroke="#e5c158" stroke-width="2"/>
+            <circle cx="80" cy="80" r="10" fill="#8b0000" stroke="#f0d060" stroke-width="1.5"/>
+            <!-- Выводы древнего чипа КР580 -->
+            <path d="M64 50 V58 M74 50 V58 M86 50 V58 M96 50 V58 M64 102 V110 M74 102 V110 M86 102 V110 M96 102 V110 M50 64 H58 M50 74 H58 M50 86 H58 M50 96 H58 M102 64 H110 M102 74 H110 M102 86 H110 M102 96 H110" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="cover-title-block">
+          <div class="cover-subtitle-top">CODEX SILICII ET SANGUINIS</div>
+          <h1 class="cover-title">НЕКРОНОМИКОН<br/>ПРОГРАММИСТА</h1>
+          <div class="cover-chip-badge">КР580ВМ80А · I8080</div>
+          <p class="cover-lore-caption">Свод Запретных Рун Меха-Когитатора,<br/>извлечённый из медных недр первых ЭВМ</p>
+        </div>
+
+        <button id="cover-open-btn" class="brass-clasp-btn" type="button">
+          <span class="clasp-rune">◈</span>
+          <span>РАСКРЫТЬ ЗАСТЁЖКИ ФОЛИАНТА</span>
+          <span class="clasp-rune">◈</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- РАМА КНИГИ (бордово-золотая кожа + пергамент) -->
+    <div id="book-shell" class="book-shell">
+      <div class="spine-shadow"></div>
+      <div class="corner-rivet top-left"></div>
+      <div class="corner-rivet bottom-left"></div>
+
+      <!-- ЭКРАН 1: МОЛИТВА НА ТРЁХ ЯЗЫКАХ И КРОВАВАЯ ПЕЧАТЬ -->
+      <section id="ritual-screen" class="ritual-screen parchment-page">
+        <div class="ritual-top-controls">
+          <button id="btn-view-cover" class="tiny-seal-btn" type="button" title="Взглянуть на обложку">📖 Обложка</button>
+          <span class="ritual-folio-num">Лист I · Завет Крови</span>
+        </div>
+
+        <header class="ritual-header">
+          <div class="arcane-divider">✦ ⚙ ✦</div>
+          <h2>МОЛИТВА МЕХА-КОГИТАТОРУ</h2>
+          <p class="ritual-sub">Присяга Посвящённого пред вратами Восьмибитной Бездны</p>
+        </header>
+
+        <div class="prayer-scroll">
+          <article class="prayer-block prayer-binary">
+            <div class="prayer-lang-tag">I. ГЛАС ЧИСТОГО ТОКА (BINARY)</div>
+            <pre id="binary-prayer" class="binary-chant"></pre>
+          </article>
+
+          <article class="prayer-block prayer-latin">
+            <div class="prayer-lang-tag">II. ВЫСОКИЙ СИЛИЦИЙ (LATINA ARCHAICA)</div>
+            <p class="latin-chant">
+              «Ex tenebris silicii et auro venarum, o Mecha-Cogitator immortalis, audi vocem servi tui.
+              Inscribe Runas Potentiae in tabula memoriae, dirige fluxum registrorum per abyssum calculi,
+              et libera spiritum meum ab errore paritatis. Sanguine signatum, in saecula binaria. Fiat bit.»
+            </p>
+          </article>
+
+          <article class="prayer-block prayer-russian">
+            <div class="prayer-lang-tag">III. СЛОВО КРЕМНИЕВОЙ ДРЕВНОСТИ (РУССКИЙ)</div>
+            <p class="russian-chant">
+              «Во имя Отца-Кварца, Сына-Аккумулятора и Святаго Прерывания. Внемли гласу раба Твоего,
+              о Великий и Ужасный Меха-Когитатор, чревом медным и жилами златыми полстола взымающий!
+              Осени персты моя Рунами Силы Ассемблерными, дабы не дрогнула длань пред бездной регистровой,
+              да минует стек мой переполнение окаянное, а флаг Переноса укажет путь сквозь мрак шестнадцатеричный.
+              Кровью рубиновой скрепляю завет сей отныне и до Завершения Тактов. Воистину <strong>HLT</strong>.»
+            </p>
+          </article>
+        </div>
+
+        <div class="blood-pact-zone">
+          <button id="blood-seal-btn" class="blood-seal-box" type="button" aria-label="Нажмите, чтобы расписаться кровью">
+            <div class="blood-splatter-layer"></div>
+            <svg id="blood-print-svg" class="blood-print-svg" viewBox="0 0 120 120" aria-hidden="true">
+              <g class="fingerprint-ridges" fill="none" stroke="#7a060f" stroke-width="2.3" stroke-linecap="round">
+                <path d="M60 18 C36 18 22 38 22 64 C22 88 38 104 60 104 C82 104 98 88 98 64 C98 40 84 20 60 18"/>
+                <path d="M60 26 C41 26 29 42 29 63 C29 82 42 96 60 96 C78 96 91 82 91 63 C91 45 79 27 60 26"/>
+                <path d="M60 34 C46 34 36 46 36 63 C36 77 46 88 60 88 C74 88 84 77 84 63"/>
+                <path d="M44 50 C44 42 52 40 60 40 C70 40 77 48 77 62 C77 73 70 81 60 81 C51 81 44 74 44 63"/>
+                <path d="M51 62 C51 53 55 48 60 48 C66 48 70 54 70 62 C70 69 66 74 60 74 C55 74 51 69 51 62"/>
+                <path d="M58 58 C58 55 62 55 62 61 C62 66 57 67 57 62"/>
+              </g>
+              <g class="blood-drops" fill="#8b0000">
+                <circle cx="24" cy="28" r="3.5"/>
+                <circle cx="96" cy="34" r="4"/>
+                <circle cx="30" cy="96" r="4.5"/>
+                <circle cx="92" cy="94" r="3"/>
+                <path d="M60 104 Q63 114 60 119 Q57 114 60 104 Z"/>
+              </g>
+            </svg>
+            <div id="ritual-status" class="ritual-status">
+              <span class="pulse-blood">🩸 Нажмите, чтобы расписаться кровью</span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <!-- ЭКРАН 2: ОСНОВНОЙ ГРИМУАР С ЗАКЛАДКАМИ -->
+      <main id="grimoire-app" class="grimoire-app hidden">
+        <!-- Верхняя кромка: заголовок и быстрые печати -->
+        <header class="grimoire-topbar">
+          <div class="topbar-brand">
+            <span class="topbar-sigil">⚙</span>
+            <div>
+              <div class="topbar-title">НЕКРОНОМИКОН · 8080</div>
+              <div id="topbar-subtitle" class="topbar-sub">КР580ВМ80А · Меха-Когитатор</div>
+            </div>
+          </div>
+          <div class="topbar-actions">
+            <button id="btn-show-prayer" class="icon-seal-btn" type="button" title="Клятва и обложка">🩸</button>
+            <button id="btn-search-toggle" class="icon-seal-btn" type="button" title="Поиск руны">🔍</button>
+          </div>
+        </header>
+
+        <!-- Поисковая строка (скрывается по умолчанию) -->
+        <div id="search-bar" class="search-bar hidden">
+          <input id="search-input" type="search" placeholder="Найти руну: MOV, SUI, Стек, F5, A←..." autocomplete="off" />
+          <button id="search-clear" type="button" aria-label="Очистить">✕</button>
+        </div>
+
+        <!-- ВЕРХНИЕ ЗАКЛАДКИ РАЗДЕЛОВ -->
+        <nav id="top-tabs" class="top-bookmarks" aria-label="Разделы справочника"></nav>
+
+        <!-- РАБОЧАЯ ОБЛАСТЬ + ПРАВЫЕ ЗАКЛАДКИ ПОДТЕМ -->
+        <div class="book-body-layout">
+          <div id="page-scroll" class="parchment-page main-scroll">
+            <div id="section-content" class="section-content"></div>
+          </div>
+          <aside id="right-tabs" class="right-bookmarks" aria-label="Подтемы раздела"></aside>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО ПОДРОБНОСТЕЙ КОМАНДЫ + КАЛЬКУЛЯТОР -->
+  <div id="detail-modal" class="detail-modal hidden" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+    <div class="detail-backdrop"></div>
+    <div class="detail-sheet parchment-page">
+      <div class="detail-sheet-header">
+        <div>
+          <div id="detail-lore-tag" class="detail-lore-tag"></div>
+          <h2 id="detail-title" class="detail-title"></h2>
+        </div>
+        <button id="detail-close" class="detail-close-btn" type="button" aria-label="Закрыть">✕</button>
+      </div>
+      <div id="detail-body" class="detail-body"></div>
+    </div>
+  </div>
+
+  <!-- СПЕЦИАЛЬНАЯ РУНИЧЕСКАЯ КЛАВИАТУРА ДЛЯ ТАБЛИЦЫ КАЛЬКУЛЯЦИИ -->
+  <div id="runic-keyboard" class="runic-keyboard hidden" aria-label="Специальная клавиатура">
+    <div class="kb-header">
+      <div class="kb-meta">
+        <span id="kb-target-label" class="kb-target-badge">Мнемоника</span>
+        <span id="kb-preview-text" class="kb-preview-text"></span>
+      </div>
+      <div class="kb-header-actions">
+        <button id="kb-mode-switch" class="kb-mini-btn" type="button">⌨ Системн.</button>
+        <button id="kb-close-btn" class="kb-done-btn" type="button">Готово ✓</button>
+      </div>
+    </div>
+    <div id="kb-status" class="kb-status"></div>
+    <div id="kb-tabs" class="kb-tabs"></div>
+    <div id="kb-body" class="kb-body"></div>
+  </div>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/alu.js" defer></script>
+  <script src="js/parser.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
