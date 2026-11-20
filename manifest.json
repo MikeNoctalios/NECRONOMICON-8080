@@ -1,0 +1,25 @@
+{
+  "name": "Некрономикон Программиста",
+  "short_name": "Некрономикон",
+  "description": "Справочник и калькулятор команд КР580ВМ80А / Intel 8080",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1b0305",
+  "theme_color": "#280609",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

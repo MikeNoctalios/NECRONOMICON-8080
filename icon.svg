@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#4a0e14"/>
+      <stop offset="100%" stop-color="#190204"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <rect x="28" y="28" width="456" height="456" rx="76" fill="none" stroke="#b8860b" stroke-width="8"/>
+  <circle cx="256" cy="256" r="165" fill="none" stroke="#d4af37" stroke-width="6" stroke-dasharray="16 10"/>
+  <circle cx="256" cy="256" r="126" fill="#230407" stroke="#f0d060" stroke-width="5"/>
+  <!-- Дорожки платы -->
+  <path d="M256 66 V130 M256 382 V446 M66 256 H130 M382 256 H446" stroke="#d4af37" stroke-width="7" stroke-linecap="round"/>
+  <!-- Ножки кристалла КР580 -->
+  <path d="M206 164 V188 M239 164 V188 M273 164 V188 M306 164 V188
+           M206 324 V348 M239 324 V348 M273 324 V348 M306 324 V348
+           M164 206 H188 M164 239 H188 M164 273 H188 M164 306 H188
+           M324 206 H348 M324 239 H348 M324 273 H348 M324 306 H348"
+        stroke="#f2d06b" stroke-width="7" stroke-linecap="round"/>
+  <!-- Чип и кровавое око -->
+  <rect x="188" y="188" width="136" height="136" rx="14" fill="#3a0a10" stroke="#f2d06b" stroke-width="6"/>
+  <circle cx="256" cy="256" r="34" fill="#9b0814" stroke="#f2d06b" stroke-width="5"/>
+  <text x="256" y="424" text-anchor="middle" fill="#f2d060" font-family="monospace" font-size="34" font-weight="bold">8080</text>
+</svg>
